@@ -5,10 +5,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 @RestController
-public class TimeController {
-    
+public class DeckController {
+
     @GetMapping("/time")      
     public String getTime() {
         LocalDateTime localDateTime = LocalDateTime.now();
@@ -18,6 +19,10 @@ public class TimeController {
         return greetings + localTimeFormatted;
     }
 
+    @GetMapping("/deck")
+    public ArrayList<Card> getMyDeck() {   
+        Deck deck = new Deck(); 
+
+        return deck.showDeck();
+    }
 }
-
-
