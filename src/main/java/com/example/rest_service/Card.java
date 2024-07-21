@@ -1,42 +1,29 @@
 package com.example.rest_service;
 
-public class Card {
+public final class Card {
     
-private String seed; 
-private String cardValue; 
+private final Seed seed; 
+private final CardValue cardValue;
 
 // Costruttore.
-Card(String seed, String cardValue) {
-    this.setSeed(seed);
-    this.setCardValue(cardValue);
+public Card(Seed seed, CardValue cardValue) {
+    this.seed = seed;
+    this.cardValue = cardValue;
 }
 
-
 // Metodi
-
-public String toString() {                // Da usare se dovrò chiamare le carte una ad una.
+public String toString() {                
     String stringa = this.seed + " " + this.cardValue;
-    System.out.println(stringa); 
-
     return stringa;
 }
 
 // Getters.
-public String getSeed() {
+public Seed getSeed() {
     return seed;
 }
 
-public String getCardValue() {
+public CardValue getCardValue() {
     return cardValue;
-}
-
-// Setters.
-public void setSeed(String seed) {
-    this.seed = seed;
-}
-
-public void setCardValue(String cardValue){
-    this.cardValue = cardValue;
 }
 
 }
